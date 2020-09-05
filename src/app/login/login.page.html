@@ -3,10 +3,43 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Log In</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Atenção</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Confira se os dados estão totalmente correto antes de confirmar
+  </ion-card-content>
+</ion-card>
+
 <ion-content>
-<h1>PAGINA DE LOGIN</h1>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating"><ion-icon name="call-outline"></ion-icon>    Número de celular</ion-label>
+      <ion-input type="number"></ion-input>
+    </ion-item>
+    <span class="divider line one-line">ou</span>
+    <ion-item lines="full">
+      <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon>   E-mail</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+
+    <span class="title">*Confira se o capstalock está ativado antes de digitar</span>
+
+    <ion-item lines="full">
+      <ion-label position="floating"><ion-icon name="medical-outline"></ion-icon>  Senha</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Confirmar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
 </ion-content>
+
+
