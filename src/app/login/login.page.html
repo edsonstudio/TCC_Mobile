@@ -19,27 +19,29 @@
 <ion-content>
   <form>
     <ion-item lines="full">
-      <ion-label position="floating"><ion-icon name="call-outline"></ion-icon>    Número de celular</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <span class="divider line one-line">ou</span>
-    <ion-item lines="full">
       <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon>   E-mail</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input autocomplete="off" type="text" name="username" [(ngModel)]="postData.username"></ion-input>
     </ion-item>
 
     <span class="title">*Confira se o capstalock está ativado antes de digitar</span>
 
     <ion-item lines="full">
-      <ion-label position="floating"><ion-icon name="medical-outline"></ion-icon>  Senha</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-label position="floating"><ion-icon name="lock-closed-outline"></ion-icon>  Senha</ion-label>
+      <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="primary" expand="block">Confirmar</ion-button>
+        <ion-button expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
       </ion-col>
     </ion-row>
   </form>
+
+</ion-content>
+
+<ion-content>
+  <re-captcha (resolved)="captchaResolved($event)" [sitekey]="sitekey"></re-captcha>
+
+  <h1>Is captcha valid? {{ isCaptchaValid | json }}</h1>
 </ion-content>
 
 
