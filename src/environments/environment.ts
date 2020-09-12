@@ -6,10 +6,6 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:8084/',
-
-  Recaptcha: {
-    sitekey: '6Lc3ycoZAAAAAJkatV4oI83Xx2pFlorExhTeZ00N'
-  }
 };
 
 /*

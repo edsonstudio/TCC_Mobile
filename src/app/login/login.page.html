@@ -29,19 +29,19 @@
       <ion-label position="floating"><ion-icon name="lock-closed-outline"></ion-icon>  Senha</ion-label>
       <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
     </ion-item>
+    <re-captcha
+(resolved)="resolved($event)"
+siteKey="6Lc3ycoZAAAAAJkatV4oI83Xx2pFlorExhTeZ00N"
+></re-captcha>
     <ion-row>
       <ion-col>
-        <ion-button expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
+        <ion-button  expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
       </ion-col>
     </ion-row>
   </form>
-
 </ion-content>
 
-<ion-content>
-  <re-captcha (resolved)="captchaResolved($event)" [sitekey]="sitekey"></re-captcha>
 
-  <h1>Is captcha valid? {{ isCaptchaValid | json }}</h1>
-</ion-content>
+
 
 

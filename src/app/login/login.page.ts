@@ -1,4 +1,4 @@
-import { environment } from './../../environments/environment.prod';
+import { environment } from './../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthConstants } from '../config/auth-constants';
@@ -8,19 +8,22 @@ import { ToastService } from '../services/toast.service';
 
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss']
   })
   export class LoginPage implements OnInit {
-
-    isCaptchaValid = false;
+  public resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response: ${captchaResponse}`);
+  }
 
   postData = {
-  username: '',
-  password: ''
+    username: '',
+    password: '',
   };
+
 
   constructor(
   private router: Router,
@@ -31,14 +34,7 @@ import { ToastService } from '../services/toast.service';
 
   ngOnInit() {}
 
-  get sitekey(){
-    return environment.recaptcha.sitekey;
-  }
 
-  captchaResolved(ev){
-    console.log("Captcha resolved", ev);
-    this.isCaptchaValid = true;
-  }
 
   validateInputs() {
   console.log(this.postData);
