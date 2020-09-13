@@ -9,6 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// re-captcha
 import { RecaptchaModule } from 'ng-recaptcha';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 

@@ -1,5 +1,5 @@
 <ion-app>
- <img src="../../assets/logotipo.png">
+ <img class="logo" src="../../assets/logotipo.png">
  
  <span class="title">Bem Vindo(a) ao nosso aplicativo</span>
 
@@ -7,12 +7,14 @@
   <ion-grid>
     <ion-row>
       <ion-col align-self-center>
-        <ion-button [routerLink]="['../login']" expand="block" color="dark">Fazer Login com e-mail</ion-button>
-
+        <div class="login-btn">
+        <ion-button [routerLink]="['../login']" expand="block" color="dark">Fazer Login com e-mail</ion-button> 
+        </div>
         <span class="divider line one-line">ou</span>
-       
-        <ion-button [routerLink]="['#']" expand="block" color="danger">Login com Google</ion-button>
-        <ion-button [routerLink]="['#']" expand="block" color="primary">Login com Facebook</ion-button>
+        <div class="login-btn">
+        <ion-button class="google-btn" [routerLink]="['#']" expand="block" color="light"><img class="icon" src="../../assets/google-logo.png">Login com Google</ion-button>
+        <ion-button class="facebook-btn" expand="block" color="primary"><img class="icon" src="../../assets/facebook-logo.png">Login com Facebook</ion-button>
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -23,3 +25,4 @@
   </ion-toolbar>
 </ion-footer>
 </ion-app>
+

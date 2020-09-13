@@ -17,28 +17,46 @@
 </ion-card>
 
 <ion-content>
+  <div class="login-box">
+    <img src="../../assets/user.png">
   <form>
+
     <ion-item lines="full">
       <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon>   E-mail</ion-label>
-      <ion-input autocomplete="off" type="text" name="username" [(ngModel)]="postData.username"></ion-input>
+      <ion-input autocomplete="off" type="email" name="email" [(ngModel)]="postData.email"></ion-input>
     </ion-item>
-
-    <span class="title">*Confira se o capstalock está ativado antes de digitar</span>
 
     <ion-item lines="full">
       <ion-label position="floating"><ion-icon name="lock-closed-outline"></ion-icon>  Senha</ion-label>
       <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
     </ion-item>
-    <re-captcha
-(resolved)="resolved($event)"
-siteKey="6Lc3ycoZAAAAAJkatV4oI83Xx2pFlorExhTeZ00N"
-></re-captcha>
+  </form>
+
+  <form #captchaProtectedForm="ngForm">
+    <div class="recaptcha">
+    <re-captcha 
+      [(ngModel)]="formModel.captcha"
+      name="captcha"
+      required
+      siteKey="6Lc3ycoZAAAAAJkatV4oI83Xx2pFlorExhTeZ00N"
+      #captchaControl="ngModel"
+    ></re-captcha> 
+     </div>
+  </form>
+
+  <ion-row>
+    <ion-col>
+      <ion-button class="error" [hidden]="captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="presentAlert()">Login</ion-button>
+    </ion-col>
+  </ion-row>
+
     <ion-row>
       <ion-col>
-        <ion-button  expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
+        <ion-button [hidden]="!captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
       </ion-col>
     </ion-row>
-  </form>
+
+  </div>
 </ion-content>
 
 
