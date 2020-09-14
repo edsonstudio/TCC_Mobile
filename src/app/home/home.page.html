@@ -1,20 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+ <img class="logo" src="../../assets/logotipo.png">
+ 
+ <span class="title">Bem Vindo(a) ao nosso aplicativo</span>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="auth-form">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center>
+        <div class="login-btn">
+        <ion-button [routerLink]="['../login']" expand="block" color="dark">Fazer Login com e-mail</ion-button> 
+        </div>
+        <span class="divider line one-line">ou</span>
+        <div class="login-btn">
+        <ion-button (click)="onLoginGoogle()" class="google-btn" expand="block" color="light"><img class="icon" src="../../assets/google-logo.png">Login com Google</ion-button>
+        <ion-button class="facebook-btn" expand="block" color="primary"><img class="icon" src="../../assets/facebook-logo.png">Login com Facebook</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align-last: center;" >Banner aqui</ion-title>
+  </ion-toolbar>
+</ion-footer>
+</ion-app>
+

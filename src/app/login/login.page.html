@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Atenção</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    Confira se os dados estão totalmente correto antes de confirmar
+  </ion-card-content>
+</ion-card>
+
+<ion-content>
+  <div class="login-box">
+    <img src="../../assets/user.png">
+  <form>
+
+    <ion-item lines="full">
+      <ion-label position="floating"><ion-icon name="mail-outline"></ion-icon>   E-mail</ion-label>
+      <ion-input autocomplete="off" type="email" name="email" [(ngModel)]="postData.email"></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating"><ion-icon name="lock-closed-outline"></ion-icon>  Senha</ion-label>
+      <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
+    </ion-item>
+  </form>
+
+  <form #captchaProtectedForm="ngForm">
+    <div class="recaptcha">
+    <re-captcha 
+      [(ngModel)]="formModel.captcha"
+      name="captcha"
+      required
+      siteKey="6Lc3ycoZAAAAAJkatV4oI83Xx2pFlorExhTeZ00N"
+      #captchaControl="ngModel"
+    ></re-captcha> 
+     </div>
+  </form>
+
+  <ion-row>
+    <ion-col>
+      <ion-button class="error" [hidden]="captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="presentAlert()">Login</ion-button>
+    </ion-col>
+  </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button [hidden]="!captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="loginAction()">Login</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>
+
+
+
+
+
