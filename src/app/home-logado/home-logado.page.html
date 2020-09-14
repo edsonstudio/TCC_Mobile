@@ -6,3 +6,12 @@
     <ion-title>Inicial</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content *ngIf="user$ | async as user">
+  <ion-row>
+    <ion-col>
+      <h2>Thank you</h2>
+      <p><strong>{{user.email}}</strong></p>
+      <p><strong>{{user.displayName}}</strong></p>
+    </ion-col>
+  </ion-row>
+<h1>Você está logado</h1>

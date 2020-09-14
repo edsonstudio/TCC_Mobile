@@ -13,7 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-
+// firebase
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +25,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
      IonicModule.forRoot(),
       HttpClientModule,
        RecaptchaModule.forRoot(),
-        AppRoutingModule],
+        AppRoutingModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,],
   providers: [
     StatusBar,
     SplashScreen,
