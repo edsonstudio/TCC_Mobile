@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "login-ng-87aa3": {
+      "hosting": {
+        "app": [
+          "login-ng-87aa3"
+        ]
+      }
+    }
+  }
+}

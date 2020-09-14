@@ -25,3 +25,91 @@
 #container a {
   text-decoration: none;
 }
+
+.divider {
+  display: flex;
+
+  &:before,
+  &:after {
+    content: "";
+    flex: 1;
+  }
+}
+
+.line {
+  align-items: center;
+  margin: 1em -1em;
+  color: #cccccc;
+
+  &:before,
+  &:after {
+    height: 1px;
+    margin: 0 1em;
+  }
+} 
+
+.one-line {
+  &:before,
+  &:after {
+     background: #cccccc;
+  }
+}
+
+.auth-form ion-grid,
+.auth-form ion-row {
+  height: 100%;
+  justify-content: center;
+}
+
+.title {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.logo{
+  height: 200px;
+  width: 200px;
+  padding: 20px;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login-btn {
+  padding: 0px 30px 5px 30px;
+  text-align: center;
+ }
+
+ .icon{
+  display: inline-block;
+  vertical-align: middle;
+  width: 42px;
+  height: 42px;
+ }
+
+ .google-btn{
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 42px;
+  padding-right: 42px;
+  --ion-color-contrast: #7b7b7b !important;
+ }
+
+ .facebook-btn{
+  font-size: 12px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  vertical-align: middle;
+  --ion-color-base: #485a96 !important;
+ }
+
+ .facebook-btn img{
+   margin-right: 10px;
+ }
