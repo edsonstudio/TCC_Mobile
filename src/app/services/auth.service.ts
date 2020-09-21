@@ -55,7 +55,7 @@ async loginGoogle(): Promise<User> {
     const data: User = {
       uid: user.uid,
       email: user.email,
-      emailVerified: user.emailVerified,
+      photoURL: user.photoURL,
       displayName: user.displayName,
     };
 
