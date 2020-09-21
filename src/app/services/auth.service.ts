@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HttpService } from './http.service';
-import { StorageService } from './storage.service';
-import { AuthConstants } from '../config/auth-constants';
 
 
 import { User } from '../shared/user.interface';
@@ -23,8 +20,6 @@ export class AuthService {
     public user$: Observable<User>;
 // Fire
 constructor(
-private httpService: HttpService,
-private storageService: StorageService,
 private router: Router,
 // Fire
 public afAuth: AngularFireAuth, private afs: AngularFirestore
@@ -61,18 +56,4 @@ async loginGoogle(): Promise<User> {
 
     return userRef.set(data, { merge: true });
   }
-
-login(postData: any): Observable<any> {
-return this.httpService.post('login', postData);
-}
-
-signup(postData: any): Observable<any> {
-return this.httpService.post('signup', postData);
-}
-
-logout() {
-this.storageService.removeStorageItem(AuthConstants.AUTH).then(res => {
-this.router.navigate(['/login']);
-});
-}
 }
