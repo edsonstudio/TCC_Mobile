@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'home-logado',
     loadChildren: () => import('./home-logado/home-logado.module').then( m => m.HomeLogadoPageModule)
   },
+  {
+    path: 'novidades',
+    loadChildren: () => import('./novidades/novidades.module').then( m => m.NovidadesPageModule)
+  },
 
 ];
 

@@ -11,7 +11,7 @@ export class ApiRestService {
     })
   };
 
-  private url = "https://localhost:44320/api/v1";
+  private url = "https://localhost:44356/api/v1/identity";
 
   constructor(private http: HttpClient) {}
 
