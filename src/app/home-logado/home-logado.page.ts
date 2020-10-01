@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
 export class HomeLogadoPage   {
   public authUser: any;
 
-  user$: Observable<User> = this.authSvc.afAuth.user;
+  // user$: Observable<User> = this.authSvc.afAuth.user;
   constructor(public authSvc: AuthService) {}
 
 }

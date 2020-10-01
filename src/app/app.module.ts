@@ -31,7 +31,7 @@ import { MessagesService } from "./services/messages.service";
       HttpClientModule,
        RecaptchaModule.forRoot(),
         AppRoutingModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
+        // AngularFireModule.initializeApp(environment.firebaseConfig),
         AngularFireAuthModule,
         IonicStorageModule.forRoot(),
         ReactiveFormsModule],
