@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Novidades</ion-title>
+  </ion-toolbar>
+</ion-header>
+<h1>NOVIDADES</h1>
+
+<ion-content [fullscreen]='true'>
+  <div *ngFor="let product of products" >
+    <img style="width: 20px; height: 20px;" src="{{images}}{{product.image}}" alt="Imagem {{product.name}}" class="w-100">
+  
+      <h3>{{product.name}}</h3>
+      <p><small>{{product.categoryName}}</small></p>
+      <p><small>{{product.brand}}</small></p>
+      <p><small>{{product.model}}</small></p>
+  </div>
+</ion-content>

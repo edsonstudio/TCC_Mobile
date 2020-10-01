@@ -1,36 +1,46 @@
-import { environment } from './../../environments/environment';
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthConstants } from '../config/auth-constants';
-import { AuthService } from '../services/auth.service';
-import { StorageService } from '../services/storage.service';
-import { ToastService } from '../services/toast.service';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { ApiRestService } from "../services/api-rest.service";
+import { MessagesService } from "../services/messages.service";
 import { AlertController } from '@ionic/angular';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl
+} from "@angular/forms";
+
+import { MenuController } from "@ionic/angular";
+import { Storage } from "@ionic/storage";
 
 export interface FormModel {
   captcha?: string;
 }
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss']
-  })
+  selector: "app-login",
+  templateUrl: "./login.page.html",
+  styleUrls: ["./login.page.scss"]
+})
+export class LoginPage implements OnInit {
+  public formModel: FormModel = {};
+  userForm: FormGroup;
 
-  export class LoginPage implements OnInit {
-    public formModel: FormModel = {};
-  postData = {
-    email: '',
-    password: '',
-  };
+  emailControl: AbstractControl;
+  passwordControl: AbstractControl;
 
   constructor(
-  private router: Router,
-  private authService: AuthService,
-  private storageService: StorageService,
-  private toastService: ToastService,
-  public alertController: AlertController
-  ) {}
+    public router: Router,
+    private formBuilder: FormBuilder,
+    private menuCtrl: MenuController,
+    private apiRest: ApiRestService,
+    private message: MessagesService,
+    private storage: Storage,
+    public alertController: AlertController,
+  ) {
+    this.menuCtrl.enable(false);
+  }
+
   async presentAlert() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
@@ -41,41 +51,62 @@ export interface FormModel {
 
     await alert.present();
   }
-  ngOnInit() {}
 
-
-  validateInputs() {
-  console.log(this.postData);
-  let email = this.postData.email.trim();
-  let password = this.postData.password.trim();
-  return (
-  this.postData.email &&
-  this.postData.password &&
-  email.length > 0 &&
-  password.length > 0
-  );
+  ngOnInit() {
+    this.initForm();
   }
 
-  loginAction() {
-  if (this.validateInputs()) {
-  this.authService.login(this.postData).subscribe(
-  (res: any) => {
-  if (res.userData) {
-  // Storing the User data.
-  this.storageService.store(AuthConstants.AUTH, res.userData);
-  this.router.navigate(['../home-logado']);
-  } else {
-  this.toastService.presentToast('E-mail ou Senha estão incorretos.');
+  private initForm() {
+    this.userForm = this.formBuilder.group({
+      email: [
+        "",
+        Validators.compose([
+          Validators.required,
+          Validators.email,
+          Validators.maxLength(50)
+        ])
+      ],
+      password: [
+        "",
+        Validators.compose([Validators.required, Validators.maxLength(25)])
+      ]
+    });
+    this.emailControl = this.userForm.controls["email"];
+    this.passwordControl = this.userForm.controls["password"];
   }
-  },
-  (error: any) => {
-  this.toastService.presentToast('Sem conexão.');
+
+  async login() {
+    let online = window.navigator.onLine;
+    if (!online) {
+      this.message.presentToast('Sem conexão com Internet', 3000);
+      return;
+    }
+    let loading = await this.message.presentLoading('Carregando');
+    await loading.present();
+    const body = {
+      email: this.emailControl.value,
+      password: this.passwordControl.value
+    };
+    this.apiRest.login(body).subscribe(
+      (res: any) => {
+        loading.dismiss();
+        if (res) {
+          if (res.success) {
+            this.storage.set('token', res.token);
+            this.router.navigateByUrl('home-logado');
+          } else {
+            this.message.presentToast(
+              'E-mail ou Senha incorretos',
+              5000
+            );
+          }
+        }
+      },
+      error => {
+        console.error(error);
+        loading.dismiss();
+        this.message.presentToast("Error ao acesso", 5000);
+      }
+    );
   }
-  );
-  } else {
-  this.toastService.presentToast(
-  'Digite seu E-mail e Senha.'
-  );
-  }
-  }
-  }
+}

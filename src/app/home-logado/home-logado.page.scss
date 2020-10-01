@@ -1,0 +1,46 @@
+.grid-1 {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+ion-icon {
+    font-size: 35px;
+    text-align: right; 
+    margin-right: 10px; 
+  }
+
+.icons{
+    text-align: right;
+    margin-right: 10px;
+}
+
+ion-item{
+    --inner-border-width:0px;
+}
+
+.ion2{
+    padding: 0px 10px 0px 10px;
+}
+
+.ion1{
+    padding: 0px 0px 0px 10px;
+    padding-top: 10px;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.textgrid2{
+    padding-top: 70px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 30px;
+}
+
+.botao{
+    --background: brown;
+}

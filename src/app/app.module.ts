@@ -18,6 +18,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 
+// api
+import { IonicStorageModule } from "@ionic/storage";
+import { ReactiveFormsModule } from "@angular/forms";
+import { MessagesService } from "./services/messages.service";
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -26,11 +31,14 @@ import { environment } from 'src/environments/environment';
       HttpClientModule,
        RecaptchaModule.forRoot(),
         AppRoutingModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFireAuthModule,],
+        // AngularFireModule.initializeApp(environment.firebaseConfig),
+        AngularFireAuthModule,
+        IonicStorageModule.forRoot(),
+        ReactiveFormsModule],
   providers: [
     StatusBar,
     SplashScreen,
+    MessagesService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],

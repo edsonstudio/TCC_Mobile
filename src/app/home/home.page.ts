@@ -15,14 +15,14 @@ export class HomePage {
     this.router.navigate(['../login'])
   }
 
-  async onLoginGoogle() {
-    try {
-      const user = await this.authSvc.loginGoogle();
-      if (user) {
-        this.router.navigate(['../home-logado']);
-      }
-    } catch (error) {
-      console.log('Error->', error);
-    }
-  }
+  // async onLoginGoogle() {
+  //   try {
+  //     const user = await this.authSvc.loginGoogle();
+  //     if (user) {
+  //       this.router.navigate(['../home-logado']);
+  //     }
+  //   } catch (error) {
+  //     console.log('Error->', error);
+  //   }
+  // }
 }

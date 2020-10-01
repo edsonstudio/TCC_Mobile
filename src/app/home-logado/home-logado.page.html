@@ -1,17 +1,45 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Inicial</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content *ngIf="user$ | async as user">
-  <ion-row>
-    <ion-col>
-      <h2>Thank you</h2>
-      <p><strong>{{user.email}}</strong></p>
+
+<ion-content>
+
+<div class="user-card-style">
+
+<div class="icons">
+<div class="ion1">
+  <ion-icon name="help-circle-outline"></ion-icon>
+</div>
+</div>
+
+
+  <!-- <ion-item *ngIf="user$ | async as user">
+    <ion-thumbnail slot="start">
+      <img src={{user.photoURL}}>
+    </ion-thumbnail>
+    <ion-label>
+      <p><strong>{{user.email}}</strong></p> 
       <p><strong>{{user.displayName}}</strong></p>
-    </ion-col>
-  </ion-row>
-<h1>Você está logado</h1>
+      <ion-button class="botao" [routerLink]="['../home']">Sair</ion-button>
+    </ion-label>
+  </ion-item> -->
+<div class="icons">
+  <div class="ion2">
+    <ion-icon  name="mail-outline"></ion-icon>
+    <ion-icon  name="cart-outline"></ion-icon>
+  </div>
+</div>
+
+</div>
+
+  <div class="grid-1" style="text-align:center;">
+    <div style=" padding-top: 10px; background: #FFFFFF; width:356px; height:450px; margin: 1px;" > 
+      <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mc206b064f37b394adff78e21ba897cfe1597441944250' 
+      style='float: left; width: 100%; height: calc((100% - 0px) * (100 / 100)); outline: 1px solid #000; overflow: hidden;'>
+          <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mae97e27f541a522627c8418920f6c3051597442014292' 
+          style='float: left; width: 66.66666666666666%; height: 100%; outline: 1px solid #000; overflow: hidden;'>
+              <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mb83c7284e4c38b97eaf57d8022f1f02e1597442067611' 
+              style='float: left; width: 100%; height: calc((100% - 0px) * (50 / 100)); outline: 1px solid #000; overflow: hidden;'></div>
+              <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mcbc8a6c8aee9d13599bc80983c07d96b1597442068915' 
+              style='float: left; width: 100%; height: calc((100% - 0px) * (50 / 100)); outline: 1px solid #000; overflow: hidden;'></div></div>
+              <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='M20383543bebb8806d82fdaa6cdb6bde11597442016260' 
+              style='float: left; width: 33.33333333333333%; height: 100%; outline: 1px solid #000; overflow: hidden;'><a class="textgrid2" [routerLink]="['../novidades']">NOVIDADES</a></div></div></div>
+              </div>
+</ion-content>
