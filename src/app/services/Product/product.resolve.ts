@@ -9,10 +9,10 @@ export class ProductResolve implements Resolve<Product[]>{
     constructor(private productService: ProductService){}
 
     async resolve(route: ActivatedRouteSnapshot) {
-        const prs = await this.productService.getProducts().toPromise();
+        const prs = await this.productService.getProducts();
         const px = prs.filter(pr => {
             const diference = new Date().getTime() - new Date(pr.registerDate).getTime();
-            const diferenceDays = (diference/(1000*3600*24)).toFixed(0);
+            const diferenceDays = (diference / ( 1000 * 3600 * 24)).toFixed(0);
             if (Number(diferenceDays) <= 5){
                 return pr;
             }

@@ -8,6 +8,7 @@ import { IonicModule } from "@ionic/angular";
 import { LoginPage } from "./login.page";
 
 import { RecaptchaModule, RecaptchaFormsModule,  } from 'ng-recaptcha';
+import { AccountService } from '../services/User/user.service';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     RecaptchaModule.forRoot(),
     RecaptchaFormsModule,
   ],
-  declarations: [LoginPage]
+  declarations: [LoginPage],
+  providers: [AccountService]
 })
 export class LoginPageModule {}

@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { LocalStorageUtils } from '../utils/localstorage';
 
-
-
-import { User } from './../shared/user.interface';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home-logado',
@@ -13,10 +10,18 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home-logado.page.scss'],
 })
 
-export class HomeLogadoPage   {
+export class HomeLogadoPage {
   public authUser: any;
 
-  // user$: Observable<User> = this.authSvc.afAuth.user;
-  constructor(public authSvc: AuthService) {}
+  localStorage = new LocalStorageUtils();
+  constructor(
+    public authSvc: AuthService,
+    private route: Router
+    ) {
+  }
 
+  async logout(){
+    await this.localStorage.cleanUserLocalData();
+    this.route.navigate(['/login']);
+  }
 }

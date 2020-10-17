@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HTTP } from '@ionic-native/http/ngx';
 import { Product } from 'src/app/models/Product';
 import { v4 as Guid } from 'uuid';
 import { BaseService } from '../base.service';
@@ -8,35 +7,21 @@ import { BaseService } from '../base.service';
 @Injectable({
     providedIn: 'root'
 })
-
 export class ProductService extends BaseService{
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HTTP) {
         super();
     }
 
-    getProducts(): Observable<Product[]> {
-        return this.http.get<Product[]>(`${this.UrlAPIV1}/Products`, super.GetJsonAuthHeader());
+    async getProducts(): Promise<Product[]> {
+        return await this.http.get(`${this.UrlAPIV1}/Products`, {} , { headers: 'Content-Type: application/json' })
+            .then(success => JSON.parse(success.data))
+            .catch(error => console.log(error));
     }
 
-    getProductsByCategory(id: typeof Guid){
-        return this.http.get<Product[]>(`${this.UrlAPIV1}/ProductsByCategory/${id}`, super.GetJsonAuthHeader());
-    }
-
-    getProduct(id: typeof Guid): Observable<Product>{
-    return this.http.get<Product>(`${this.UrlAPIV1}/products/${id}`, super.GetJsonAuthHeader());
-    }
-
-    postProduct(product: Product): Observable<Product> {
-        return this.http.post<Product>(`${this.UrlAPIV1}/products`, product, super.GetJsonAuthHeader());
-    }
-
-    deleteProduct(id: typeof Guid): Observable<Product> {
-       return this.http.delete<Product>(`${this.UrlAPIV1}/products/${id}`, super.GetJsonAuthHeader());
-    }
-
-    putProduct(product: Product): Observable<Product> {
-        return this.http.put<Product>(`${this.UrlAPIV1}/products/${product.id}`,
-        product, this.GetJsonAuthHeader());
+    async getProduct(idT: typeof Guid): Promise<Product>{
+        return await this.http.get(`${this.UrlAPIV1}/products/`, { id: idT } , { headers: 'Content-Type: application/json' })
+        .then(success => JSON.parse(success.data))
+        .catch(error => console.log(error));
     }
 }
