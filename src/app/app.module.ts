@@ -13,9 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-// firebase
-import { AngularFireAuthModule } from '@angular/fire/auth';
-
 // api
 import { IonicStorageModule } from '@ionic/storage';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -31,8 +28,6 @@ import { GuardAccount } from './services/User/user.guard';
       HttpClientModule,
        RecaptchaModule.forRoot(),
         AppRoutingModule,
-        // AngularFireModule.initializeApp(environment.firebaseConfig),
-        AngularFireAuthModule,
         IonicStorageModule.forRoot(),
         ReactiveFormsModule],
   providers: [
