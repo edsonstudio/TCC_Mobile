@@ -5,15 +5,6 @@
 
 export const environment = {
   production: false,
-  //   firebaseConfig: {
-  //   apiKey: 'AIzaSyAjVZG-hNSosWIg6Jr-eN7qQ9DFckCw1sA',
-  //   authDomain: 'login-ng-87aa3.firebaseapp.com',
-  //   databaseURL: 'https://login-ng-87aa3.firebaseio.com',
-  //   projectId: 'login-ng-87aa3',
-  //   storageBucket: 'login-ng-87aa3.appspot.com',
-  //   messagingSenderId: '1046261218612',
-  //   appId: '1:1046261218612:web:b50c9cb5812d27ad03b961',
-  // },
   apiUrlV1: 'http://192.168.0.101:5306/api/v1',
   apiAuthUrlV1: 'http://192.168.0.101:5102/api/v1/identity',
   images: 'http://192.168.0.101:5306/'

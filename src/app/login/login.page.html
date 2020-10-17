@@ -52,11 +52,15 @@
            </div>
         </form>
       
-
+        <ion-row>
+          <ion-col>
+            <ion-button class="error" [hidden]="captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="presentAlert()">Login</ion-button>
+          </ion-col>
+        </ion-row>
       
           <ion-row>
             <ion-col>
-              <ion-button  expand="block" share="round" color="success" (click)="login()">Login</ion-button>
+              <ion-button [hidden]="!captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="login()">Login</ion-button>
             </ion-col>
           </ion-row>
 

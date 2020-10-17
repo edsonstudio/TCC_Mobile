@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
 import { LocalStorageUtils } from '../utils/localstorage';
 
 
@@ -11,11 +10,9 @@ import { LocalStorageUtils } from '../utils/localstorage';
 })
 
 export class HomeLogadoPage {
-  public authUser: any;
 
   localStorage = new LocalStorageUtils();
   constructor(
-    public authSvc: AuthService,
     private route: Router
     ) {
   }

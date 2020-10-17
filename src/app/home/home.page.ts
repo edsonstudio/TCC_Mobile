@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from './../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,20 +8,9 @@ import { AuthService } from './../services/auth.service';
 })
 export class HomePage {
 
-  constructor(private router: Router, private authSvc: AuthService){}
+  constructor(private router: Router){}
 
   navigate(){
-    this.router.navigate(['../login'])
+    this.router.navigate(['../login']);
   }
-
-  // async onLoginGoogle() {
-  //   try {
-  //     const user = await this.authSvc.loginGoogle();
-  //     if (user) {
-  //       this.router.navigate(['../home-logado']);
-  //     }
-  //   } catch (error) {
-  //     console.log('Error->', error);
-  //   }
-  // }
 }
