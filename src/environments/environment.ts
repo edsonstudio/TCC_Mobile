@@ -14,9 +14,9 @@ export const environment = {
   //   messagingSenderId: '1046261218612',
   //   appId: '1:1046261218612:web:b50c9cb5812d27ad03b961',
   // },
-  apiUrlV1: 'https://localhost:44372/api/v1',
-  apiAuthUrlV1: 'https://localhost:44356/api/v1/identity',
-  images: 'https://localhost:44372/'
+  apiUrlV1: 'http://192.168.0.101:5306/api/v1',
+  apiAuthUrlV1: 'http://192.168.0.101:5102/api/v1/identity',
+  images: 'http://192.168.0.101:5306/'
 };
 
 /*

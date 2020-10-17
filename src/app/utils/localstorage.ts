@@ -1,29 +1,39 @@
+import { Plugins } from '@capacitor/core';
+const { Storage } = Plugins;
 export class LocalStorageUtils {
 
-    public getUser() {
-        return JSON.parse(localStorage.getItem('ecom.user'));
+    public async cleanUserLocalData() {
+        await Storage.remove({key: 'ecom.token'});
+        await Storage.remove({key: 'ecom.user'});
     }
 
-    public saveUserLocalData(response: any) {
+    async saveUserLocalData(response) {
         this.saveUserToken(response.accessToken);
         this.saveUser(response.userToken);
+       }
+
+    public async getUserToken(): Promise<string> {
+        const ret = await Storage.get({ key: 'ecom.token' });
+        return ret.value;
     }
 
-    public cleanUserLocalData() {
-        localStorage.removeItem('ecom.token');
-        localStorage.removeItem('ecom.user');
+    public async getUser() {
+        const ret = await Storage.get({ key: 'ecom.user' });
+        return ret.value;
     }
 
-    public getUserToken(): string {
-        return localStorage.getItem('ecom.token');
+    public async saveUserToken(token: string) {
+         await Storage.set({
+            key: 'ecom.token',
+            value: token
+        });
     }
 
-    public saveUserToken(token: string) {
-        localStorage.setItem('ecom.token', token);
-    }
-
-    public saveUser(user: string) {
-        localStorage.setItem('ecom.user', JSON.stringify(user));
+    public async saveUser(user: string) {
+        await Storage.set({
+            key: 'ecom.user',
+            value: user
+          });
     }
 
 }

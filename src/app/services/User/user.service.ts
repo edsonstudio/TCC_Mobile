@@ -1,33 +1,28 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
 import { User } from 'src/app/models/User';
 import { BaseService } from '../base.service';
+import { HTTP, HTTPResponse } from '@ionic-native/http/ngx';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+})
 export class AccountService extends BaseService {
 
-    constructor(private http: HttpClient) { super(); }
+    constructor(private http: HTTP)
+    {
+        super();
+        this.http.setDataSerializer('json');
+    }
 
-    registerUser(user: User): Observable<User> {
-        const response = this.http
-            .post(`${this.UrlAuth}/nova-conta`, user, this.GetJsonHeader())
-            .pipe(
-                map(this.extractData),
-                catchError(this.serviceError)
-            );
+    async Login(user: User) {
+        let response;
+        await this.http
+            .post(`${this.UrlAuth}/entrar`, user, { headers: 'Content-Type: application/json' })
+            .then(res => response = JSON.parse(res.data) )
+            .catch(this.serviceError);
 
+        console.log('Resposta do login: ', response);
         return response;
     }
 
-    Login(user: User): Observable<User> {
-        const response = this.http
-            .post(`${this.UrlAuth}/entrar`, user, this.GetJsonHeader())
-            .pipe(
-                map(this.extractData),
-                catchError(this.serviceError));
-
-        return response;
-    }
 }

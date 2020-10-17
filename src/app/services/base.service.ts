@@ -19,10 +19,10 @@ export abstract class BaseService {
 
     protected GetJsonAuthHeader() {
         return {
-            headers: new HttpHeaders({
+            headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${this.LocalStorage.getUserToken()}`
-            })
+            }
         };
     }
 
