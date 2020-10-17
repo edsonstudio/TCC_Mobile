@@ -15,13 +15,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 // firebase
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireModule } from '@angular/fire';
-import { environment } from 'src/environments/environment';
 
 // api
-import { IonicStorageModule } from "@ionic/storage";
-import { ReactiveFormsModule } from "@angular/forms";
-import { MessagesService } from "./services/messages.service";
+import { IonicStorageModule } from '@ionic/storage';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MessagesService } from './services/messages.service';
+import { HTTP } from '@ionic-native/http/ngx';
+import { GuardAccount } from './services/User/user.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +39,8 @@ import { MessagesService } from "./services/messages.service";
     StatusBar,
     SplashScreen,
     MessagesService,
+    GuardAccount,
+    HTTP,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent],
