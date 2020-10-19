@@ -1,42 +1,64 @@
+<ion-app>
 
-<ion-content>
-  
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-fab-button (click)="logout()">
-      <ion-icon name="log-out"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+ <div class="user-card-style">
 
-<div class="user-card-style">
-
-<div class="icons">
 <div class="ion1">
-  <ion-icon name="help-circle-outline"></ion-icon>
-</div>
-</div>
-
+  <ion-item>
+    <ion-thumbnail slot="start">
+      <img style="width: 400px;" src="../../assets/user.png">
+    </ion-thumbnail>
+    <ion-label>
+      <p><strong>Nome usúario</strong></p> 
+      <ion-button class="botao" (click)="logout()">Sair</ion-button>
+    </ion-label>
+  </ion-item> 
 
 <div class="icons">
   <div class="ion2">
     <ion-icon  name="mail-outline"></ion-icon>
     <ion-icon  name="cart-outline"></ion-icon>
-
   </div>
 </div>
-
+</div>  
 </div>
+<ion-content>
+  <ion-grid  style=' text-align: center; padding-top: 50px;'>
+    <ion-row >
+      <ion-col col-6 class="linha">
+              <ion-card text-center padding color="danger">
+                <ion-row class="linha" class="textgrid1" >     
+              <a class="textgrid1">CHAT / SUPORTE</a>
+            </ion-row>
+            </ion-card>
+            <ion-card text-center padding color="danger">
+        <ion-row  class="linha" >
+              <a class="textgrid1">RASTREAMENTO</a>
+        </ion-row>
+      </ion-card>
+    </ion-col>
+    <ion-col col-6  class="linha" >
+      <div>
+        <ion-card text-center padding color="danger">
+          <a class="textgrid2" [routerLink]="['../novidades']">NOVIDADES</a>
+        </ion-card>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-grid>  
 
-  <div class="grid-1" style="text-align:center;">
-    <div style=" padding-top: 10px; background: #FFFFFF; width:356px; height:450px; margin: 1px;" > 
-      <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mc206b064f37b394adff78e21ba897cfe1597441944250' 
-      style='float: left; width: 100%; height: calc((100% - 0px) * (100 / 100)); outline: 1px solid #000; overflow: hidden;'>
-          <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mae97e27f541a522627c8418920f6c3051597442014292' 
-          style='float: left; width: 66.66666666666666%; height: 100%; outline: 1px solid #000; overflow: hidden;'>
-              <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mb83c7284e4c38b97eaf57d8022f1f02e1597442067611' 
-              style='float: left; width: 100%; height: calc((100% - 0px) * (50 / 100)); outline: 1px solid #000; overflow: hidden;'></div>
-              <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='Mcbc8a6c8aee9d13599bc80983c07d96b1597442068915' 
-              style='float: left; width: 100%; height: calc((100% - 0px) * (50 / 100)); outline: 1px solid #000; overflow: hidden;'></div></div>
-              <div class='mfGridBuilderRenderNode_cmpD2a508e0078c0a080d23cf319321fc93c' data-nodeid='M20383543bebb8806d82fdaa6cdb6bde11597442016260' 
-              style='float: left; width: 33.33333333333333%; height: 100%; outline: 1px solid #000; overflow: hidden;'><a class="textgrid2" [routerLink]="['../novidades']">NOVIDADES</a></div></div></div>
-              </div>
-</ion-content>
+
+  <ion-card class="card0">
+    <ion-card-header>
+      <ion-card-title>Olá,</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+     Aqui contém todo tipo de informação caso precise saber mais clique <a>aqui</a>
+    </ion-card-content>
+  </ion-card>
+</ion-content> 
+<ion-footer>
+  <ion-toolbar>
+    <ion-title style="text-align-last: center;" >Banner aqui</ion-title>
+  </ion-toolbar>
+</ion-footer>
+</ion-app>
