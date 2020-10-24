@@ -1,8 +1,4 @@
-.grid-1 {
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-}
+
 
 ion-icon {
     font-size: 35px;
@@ -30,17 +26,33 @@ ion-item{
 
 
 a{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
+.textgrid1{
+    margin: 20px; 
+    padding-bottom: 30px; 
+    padding-top: 30px;
+    font-size: 25px;
+}
+
 .textgrid2{
-    padding-top: 70px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: 30px;
+    text-align: center;
 }
 
-.botao{
-    --background: brown;
+.linha{
+    outline: 1px solid #000;
 }
+
+.card0{
+    padding-top: 30px;
+    background-color: #eee720;
+}
+
+

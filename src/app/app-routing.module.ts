@@ -20,7 +20,15 @@ const routes: Routes = [
   {
     path: 'novidades',
     loadChildren: () => import('./novidades/novidades.module').then( m => m.NovidadesPageModule)
+  },  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: 'rastreamento',
+    loadChildren: () => import('./rastreamento/rastreamento.module').then( m => m.RastreamentoPageModule)
+  },
+
 
 ];
 
