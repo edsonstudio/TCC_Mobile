@@ -15,6 +15,15 @@ ion-item{
     --inner-border-width:0px;
 }
 
+ion-item {
+    --ion-background-color: #d8d6d6 !important;
+}
+
+.user-jpg{
+    width: 400px;
+    outline: 1px solid #000;
+}
+
 .ion2{
     padding: 0px 10px 0px 10px;
 }
@@ -22,6 +31,11 @@ ion-item{
 .ion1{
     padding: 0px 0px 0px 10px;
     padding-top: 10px;
+}
+
+.user-card-style{
+    outline: 1px solid #000;
+    background-color: #d8d6d6;
 }
 
 
@@ -52,7 +66,9 @@ a{
 
 .card0{
     padding-top: 30px;
-    background-color: #eee720;
+    background-color: #28c3ff;
 }
 
-
+.ion-color-danger{
+    background: #ebb444 !important;
+}
