@@ -7,7 +7,8 @@ export const environment = {
   production: false,
   apiUrlV1: 'http://192.168.0.101:5306/api/v1',
   apiAuthUrlV1: 'http://192.168.0.101:5102/api/v1/identity',
-  images: 'http://192.168.0.101:5306/'
+  images: 'http://192.168.0.101:5306/',
+  apiChat: 'http://192.168.0.101:5306',
 };
 
 /*
