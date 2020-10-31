@@ -1,8 +1,5 @@
-<ion-app>
- <img class="logo" src="../../assets/logotipo.png">
- 
- <span class="title">Bem Vindo(a) ao nosso aplicativo</span>
-
+<ion-app  class="background-image">
+ <img class="logo" src="../../assets/logomobile.png">
 <ion-content class="auth-form">
   <ion-grid>
     <ion-row>
@@ -18,11 +15,87 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</ion-content>
-<ion-footer>
+
+<!-- <ion-footer>
   <ion-toolbar>
     <ion-title style="text-align-last: center;" >Banner aqui</ion-title>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->
+
+  <!-- <h5>Auto Play Slider</h5>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+
+        <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="{{s.id}}">
+            <span class="slide-text">Slide id {{s.id}}</span>
+          </ion-slide>
+        </ion-slides>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid> -->
+
+
+  <h5>Slider with Space Between</h5>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1">
+        <span class="slider-nav arrow-prev" (click)="slidePrev(sliderTwo,slideWithNav2)">
+          <div class="prev-icon-custom custon-nav" [class.disabled]="sliderTwo.isBeginningSlide"></div>
+        </span>
+      </ion-col>
+      <ion-col size="10">
+
+        <ion-slides pager="true" [options]="slideOptsOne" #slideWithNav
+          (ionSlideDidChange)="SlideDidChange(sliderOne,slideWithNav)">
+          <ion-slide *ngFor="let s of sliderOne.slidesItems">
+            <img src="{{s.id}}">
+            <span class="slide-text">Slide id {{s.id}}</span>
+          </ion-slide>
+        </ion-slides>
+
+      </ion-col>
+      <ion-col size="1">
+        <span class="slider-nav arrow-next" (click)="slideNext(sliderTwo,slideWithNav2)">
+          <div class="next-icon-custom custon-nav" [class.disabled]="sliderTwo.isEndSlide"></div>
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <h5>Slider at bottom</h5>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1">
+        <span class="slider-nav arrow-prev" (click)="slidePrev(sliderThree,slideWithNav3)">
+          <div class="prev-icon-custom custon-nav" [class.disabled]="sliderThree.isBeginningSlide"></div>
+        </span>
+      </ion-col>
+      <ion-col size="10">
+
+        <ion-slides pager="false" [options]="slideOptsThree" #slideWithNav3
+          (ionSlideDidChange)="SlideDidChange(sliderThree,slideWithNav3)">
+          <ion-slide *ngFor="let s of sliderThree.slidesItems">
+            <img src="{{s.id}}">
+          </ion-slide>
+        </ion-slides>
+
+      </ion-col>
+      <ion-col size="1">
+        <span class="slider-nav arrow-next" (click)="slideNext(sliderThree,slideWithNav3)">
+          <div class="next-icon-custom custon-nav" [class.disabled]="sliderThree.isEndSlide"></div>
+        </span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
 </ion-app>
 
