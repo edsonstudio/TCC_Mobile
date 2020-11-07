@@ -57,7 +57,6 @@
 
 .auth-form ion-grid,
 .auth-form ion-row {
-  height: 100%;
   justify-content: center;
 }
 
@@ -73,7 +72,6 @@
    height: 350px;
    width: 600px;
    padding: 20px;
-   margin-top: 20px;
    display: block;
    margin-left: auto;
    margin-right: auto;
@@ -145,7 +143,7 @@
   vertical-align: middle;
   position: absolute;
   top: 50%;
-  transform: translateY(-5%);
+  transform: translateY(-1%);
 }
 .prev-icon-custom{
   background: url(https://freakyjolly.com/demo/jquery/OwlCarousel2/nav-icon.png) no-repeat scroll 0px 0px;

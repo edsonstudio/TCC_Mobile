@@ -47,16 +47,16 @@ export class HomePage {
         isEndSlide: false,
         slidesItems: [
           {
-            id: '../../assets/user.png'
+            id: '../../assets/slides/slide1.png'
           },
           {
-            id: '../../assets/google-logo.png'
+            id: '../../assets/slides/slide2.png'
           },
           {
-            id: '../../assets/facebook-logo.png'
+            id: '../../assets/slides/slide3.png'
           },
           {
-            id: '../../assets/logomobile.png'
+            id: '../../assets/slides/slide4.png'
           },
         ]
       };
