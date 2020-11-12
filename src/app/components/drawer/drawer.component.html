@@ -1,0 +1,64 @@
+<div class="drawer" #drawer>
+   <div class="ion-text-center">
+    <ion-button fill="clear" expand="full" (click)="toggleDrawer()">
+      <div class="drawer-pull"></div>
+    </ion-button>
+  </div> 
+  <ion-content class="background-image">
+     <ion-card>
+      <ion-card-header>
+        <ion-card-title>ATENÇÃO</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Confira se os dados estão totalmente correto antes de confirmar
+      </ion-card-content>
+    </ion-card> 
+      <div class="login-box">
+    
+            <form [formGroup]="userForm" (ngSubmit)="login()">
+              <ion-item lines="full">
+                <ion-icon name="mail"></ion-icon>
+                  <ion-input
+                    formControlName="email"
+                    type="email"
+                    placeholder="E-mail"
+                  ></ion-input>
+                </ion-item>
+    
+                <ion-item lines="full">
+                  <ion-icon name="lock-open"></ion-icon>
+                  <ion-input
+                    formControlName="password"
+                    type="password"
+                    placeholder="Senha"
+                  ></ion-input>
+                </ion-item></form>
+    
+    
+            <form #captchaProtectedForm="ngForm">
+              <div class="recaptcha">
+              <re-captcha 
+                [(ngModel)]="formModel.captcha"
+                name="captcha"
+                required
+                siteKey="6Lc3ycoZAAAAAJkatV4oI83Xx2pFlorExhTeZ00N"
+                #captchaControl="ngModel"
+              ></re-captcha> 
+               </div>
+            </form>
+          
+           <ion-row>
+              <ion-col>
+                <ion-button class="error" [hidden]="captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="presentAlert()">Login</ion-button>
+              </ion-col>
+            </ion-row>
+          
+              <ion-row>
+                <ion-col>
+                  <ion-button class="login-btn-2" [hidden]="!captchaProtectedForm.form.valid" expand="block" share="round" color="success" (click)="login()">Login</ion-button>
+                </ion-col>
+              </ion-row> 
+
+            </div>
+            </ion-content>
+</div>

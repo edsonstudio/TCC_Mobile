@@ -1,0 +1,123 @@
+.drawer{
+    position: absolute;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 16px;
+    width: 100%;
+    border-radius: 20px;
+    bottom: calc(-76vh + env(safe-area-inset-bottom));
+    height: 80vh;
+    z-index: 11;
+    background-image: linear-gradient(to right, #222428, #77fc63, #64d055, #0a1809, #75fc60, #64d055, #2e4231)
+}
+
+.drawer-pull{
+  background-image: linear-gradient(black,  #78ff63, black);
+    height: 4px;
+    width: 60px;
+    border-radius: 2px;
+}
+
+
+.title {
+    display: block;
+    text-align: left;
+    padding: 5px;
+    margin-top: 0px;
+    font-size: 12px;
+    color: red;
+  }
+
+  ion-icon {
+    color: white;
+    margin-right: 7px;
+  }
+  
+ion-card{
+    background-color: #c1ffb8;
+    margin-top: 10px;
+}
+
+ion-card-title{
+    font-size: 20px;
+}
+
+.ion-inherit-color.md.hydrated{
+  padding: 5px 10px 5px 10px;
+}
+
+
+.item-label-floating{  --min-height: 0px;
+  }
+ion-card-content{
+  font-size: 12px;
+}
+
+.sc-ion-input-md-h{
+  --color: white;
+}
+ 
+ion-item {
+  // border-radius: 10px !important;
+ // padding-left: 30px !important;
+  font-size: 17px;
+  margin-bottom: 10px;
+  // border: 1px solid black;
+  border-bottom: 0px !important;
+  box-shadow: none !important;
+  padding: 0;
+  // background-color: lightblue;
+  --border-color: none;
+  --background: none !important;
+ }
+
+.login-box {
+  padding: 60px 30px 5px 30px;
+ }
+
+.item-interactive.ion-valid{
+--highlight-background:none;
+}
+
+.ion-color-success {
+--ion-color-base: #000000 !important
+}
+
+form{
+ padding: 0px 20px 0px 20px;
+}
+
+.recaptcha{   
+ transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;
+ width: 200px;
+ margin: auto;
+    }
+
+img{
+  height: 150px;
+  width: 170px;
+  padding: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error { 
+  --ion-color-base: #c1c1c1 !important;
+  box-shadow: 1px 1px 30px 5px #f768098c;
+ }
+
+.login-btn-2{
+  box-shadow: 1px 1px 30px 5px #ebf5d5;
+ }
+
+.my-custom-class .alert-wrapper {
+  background: #e5e5e5;
+}
+
+:host {
+  .background-image {
+    background: url('../../../assets/back2.jpg');
+    background-size:100%;
+    --background: none !important;
+    background-repeat: no-repeat;
+  }
+}
