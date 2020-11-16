@@ -19,6 +19,6 @@ export class HomeLogadoPage {
 
   async logout(){
     await this.localStorage.cleanUserLocalData();
-    this.route.navigate(['./home']);
+    this.route.navigate(['']);
   }
 }

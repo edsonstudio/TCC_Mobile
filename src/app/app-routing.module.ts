@@ -4,7 +4,7 @@ import { GuardAccount } from './services/User/user.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     canActivate: [GuardAccount]
   },
