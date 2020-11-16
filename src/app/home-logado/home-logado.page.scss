@@ -11,12 +11,9 @@ ion-icon {
     margin-right: 10px;
 }
 
-ion-item{
-    --inner-border-width:0px;
-}
-
 ion-item {
     --ion-background-color: #d8d6d6 !important;
+    --inner-border-width:0px;
 }
 
 .user-jpg{
@@ -70,5 +67,25 @@ a{
 }
 
 .ion-color-danger{
-    background: #ebb444 !important;
+    background-image: linear-gradient(rgb(12, 236, 79), rgb(13, 189, 130));
+    box-shadow: 1px 1px 8px 10px #78ff6394;
 }
+
+:host {
+    .background-image {
+      background: url('../../assets/back3.jpg');
+      background-repeat: no-repeat;
+      background-size:100%;
+      bottom: 0;
+      color: black;
+      left: 0;
+      overflow: auto;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 0;
+      background-size: cover;
+    }
+  }
+
+

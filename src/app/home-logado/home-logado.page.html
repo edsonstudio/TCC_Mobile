@@ -1,42 +1,25 @@
-<ion-app>
-
- <div class="user-card-style">
-<div class="ion1">
-  <ion-item>
-    <ion-thumbnail slot="start">
-      <img  class="user-jpg" src="#">
-    </ion-thumbnail>
-    <ion-label>
-      <p><strong>nome usuario</strong></p> 
-      <ion-button class="botao" (click)="logout()">Sair</ion-button>
-    </ion-label>
-  </ion-item> 
-<div class="icons">
-  <div class="ion2">
-    <ion-icon  name="mail-outline"></ion-icon>
-    <ion-icon  name="cart-outline"></ion-icon>
-  </div>
-</div>
-</div>  
-</div>
+<ion-app class="background-image">
 
 
-<ion-content>
-  <ion-grid  style=' text-align: center; padding-top: 10px; '>
+      <ion-button color="danger" (click)="logout()">Sair</ion-button>
+
+
+<ion-content style="--background: none !important;">
+  <ion-grid  style=' text-align: center; padding-top: 160px; '>
     <ion-row >
-      <ion-col col-6 class="linha">
+      <ion-col col-6 >
               <ion-card text-center padding color="danger">
-                <ion-row class="linha" class="textgrid1" >     
+                <ion-row  class="textgrid1" >     
               <a class="textgrid1" [routerLink]="['../chat']" >CHAT / SUPORTE</a>
             </ion-row>
             </ion-card>
             <ion-card text-center padding color="danger">
-        <ion-row  class="linha" >
+        <ion-row >
               <a class="textgrid1" [routerLink]="['../rastreamento']">RASTREAMENTO</a>
         </ion-row>
       </ion-card>
     </ion-col>
-    <ion-col col-6  class="linha" >
+    <ion-col col-6 >
       <div>
         <ion-card text-center padding color="danger">
           <a class="textgrid2" [routerLink]="['../novidades']">NOVIDADES</a>
@@ -45,20 +28,5 @@
     </ion-col>
   </ion-row>
 </ion-grid>  
-
-
-  <ion-card class="card0">
-    <ion-card-header>
-      <ion-card-title>Olá,</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-     Aqui contém todo tipo de informação caso precise saber mais clique <a>aqui</a>
-    </ion-card-content>
-  </ion-card>
 </ion-content> 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title style="text-align-last: center;" >Banner aqui</ion-title>
-  </ion-toolbar>
-</ion-footer>
 </ion-app>
