@@ -60,46 +60,6 @@ export class HomePage {
           },
         ]
       };
-      // Item object for Food
-      this.sliderTwo =
-      {
-        isBeginningSlide: true,
-        isEndSlide: false,
-        slidesItems: [
-          {
-            id: '../../assets/user.png'
-          },
-          {
-            id: '../../assets/google-logo.png'
-          },
-          {
-            id: '../../assets/facebook-logo.png'
-          },
-          {
-            id: '../../assets/logomobile.png'
-          },
-        ]
-      };
-      // Item object for Fashion
-      this.sliderThree =
-      {
-        isBeginningSlide: true,
-        isEndSlide: false,
-        slidesItems: [
-          {
-            id: '../../assets/user.png'
-          },
-          {
-            id: '../../assets/google-logo.png'
-          },
-          {
-            id: '../../assets/facebook-logo.png'
-          },
-          {
-            id: '../../assets/logomobile.png'
-          },
-        ]
-      };
     }
 
     toggleBackdrop(isVisible){

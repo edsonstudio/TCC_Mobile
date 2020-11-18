@@ -9,18 +9,14 @@ const routes: Routes = [
     canActivate: [GuardAccount]
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
-    canActivate: [GuardAccount]
-  },
-  {
     path: 'home-logado',
     loadChildren: () => import('./home-logado/home-logado.module').then( m => m.HomeLogadoPageModule)
   },
   {
     path: 'novidades',
     loadChildren: () => import('./novidades/novidades.module').then( m => m.NovidadesPageModule)
-  },  {
+  },
+  {
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
@@ -28,8 +24,6 @@ const routes: Routes = [
     path: 'rastreamento',
     loadChildren: () => import('./rastreamento/rastreamento.module').then( m => m.RastreamentoPageModule)
   },
-
-
 ];
 
 @NgModule({
